@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Flipbook Magazine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <button id="prevBtn" class="nav-btn">← Previous</button>
+            <span id="pageInfo" class="page-info">Loading...</span>
+            <button id="nextBtn" class="nav-btn">Next →</button>
+        </div>
+        
+        <div id="flipbook" class="flipbook-container">
+            <div class="loading">Loading PDF...</div>
+        </div>
+        
+        <div class="bottom-controls">
+            <button id="zoomOut" class="control-btn">-</button>
+            <span id="zoomLevel">100%</span>
+            <button id="zoomIn" class="control-btn">+</button>
+            <button id="fullscreen" class="control-btn">Fullscreen</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

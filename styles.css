@@ -1,0 +1,176 @@
+:root {
+    --primary: #ABC022;       
+    --primary-dark: #FFFFFF;   
+    --secondary: #E0E0E0;      
+    --background: #09212C;     
+    --surface: #1A2E38;       
+    --text: #FFFFFF;           
+    --text-light: #9CA3AF;    
+    --border: #9CA3AF;        
+    --danger: #FF4C4C;       
+    --success: #4CAF50;     
+    --shadow: 0 -1px 3px rgba(9, 33, 44, 0.05);   
+    --shadow-lg: 0 -10px 25px rgba(9, 33, 44, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    background: var(--surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    padding: 30px;
+    border: 1px solid var(--border);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-btn, .control-btn {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover, .control-btn:hover {
+    background: var(--primary-dark);
+    color: var(--background);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(171, 192, 34, 0.4);
+}
+
+.nav-btn:disabled {
+    background: var(--border);
+    color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.page-info {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 150px;
+    text-align: center;
+}
+
+.flipbook-container {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+#flipbook {
+    width: 100%;
+    height: 100%;
+}
+
+.flipbook-page {
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flipbook-page canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.loading {
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+#zoomLevel {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 60px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .flipbook-container {
+        height: 400px;
+    }
+    
+    .nav-btn, .control-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+    
+    .page-info {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flipbook-container {
+        height: 300px;
+    }
+    
+    .controls {
+        gap: 10px;
+    }
+}
+
+.hard {
+    background: var(--secondary) !important;
+}
+
+.hard-shadow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
